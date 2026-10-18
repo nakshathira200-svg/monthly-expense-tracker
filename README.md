@@ -326,3 +326,33 @@ Possible extensions to the project include:
 RupeeWise demonstrates how a functional web application can combine relational and NoSQL databases to address a real-world personal finance problem. By integrating transaction management, budgeting, statement imports, authentication, and advanced SQL features, the project connects database design concepts with practical application development.
 
 The project illustrates the role of relational integrity, database-side validation, stored procedures, views, triggers, indexes, and document storage in building a more structured and maintainable financial application.
+
+## 15. Functional Requirements and Documentation
+
+### Functional Requirements
+
+1. **User Authentication:** Users can register, log in, maintain an authenticated session, and log out.
+2. **Transaction Management:** Authenticated users can create, view, update, and delete their income and expense transactions.
+3. **Category Management:** Transactions are associated with predefined categories and income/expense types.
+4. **Financial Dashboard:** The application provides financial summaries to help users understand their income and spending.
+5. **Monthly Budgeting:** Users can set and update a monthly budget.
+6. **Statement Import:** Users can submit transaction data in JSON format for import processing.
+7. **NoSQL Storage:** MongoDB stores bank statement import batches separately from the main relational transaction records.
+8. **Data Validation:** The application validates inputs, while MySQL constraints and triggers help maintain data integrity.
+9. **User Data Isolation:** Protected operations use the authenticated user's identity to restrict access to their records.
+
+### Database Documentation
+
+The following files provide additional information about the database design and implementation:
+
+- [Entity Relationship Diagram](documentation/RupeeWise_ER_Diagram.png)
+- [Data Dictionary](documentation/Data_Dictionary.md)
+- [SQL Implementation and Advanced Features](documentation/SQL_Implementation.md)
+- [MySQL Database Schema](database/schema.sql)
+- [Advanced SQL Scripts](database/advanced_features.sql)
+
+### Database Technology Justification
+
+**MySQL** is used for structured financial data because it supports relational tables, primary and foreign keys, constraints, joins, aggregate queries, views, stored procedures, and triggers.
+
+**MongoDB** is used to store bank statement import batches in a flexible document format. This keeps the import records separate from the application's core relational transaction data.
